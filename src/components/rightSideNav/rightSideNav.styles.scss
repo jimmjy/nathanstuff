@@ -1,0 +1,31 @@
+.right-side-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+
+  .nav-item-link {
+    margin: 0 5px;
+    a {
+      font-size: 1rem;
+      width: 100%;
+      height: 100%;
+      text-decoration: none;
+      color: rgba(80, 80, 131, 0.938);
+
+      &:visited {
+        color: none;
+      }
+
+      &:hover {
+        color: rgb(28, 46, 150);
+      }
+    }
+  }
+}

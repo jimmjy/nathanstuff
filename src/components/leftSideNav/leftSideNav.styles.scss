@@ -1,0 +1,17 @@
+.leftNav {
+  // width: 30%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .nav-logo {
+    margin-right: 20px;
+    width: 200px;
+    height: 100px;
+  }
+
+  .nav-location {
+    font-size: 20px;
+    white-space: nowrap;
+  }
+}
