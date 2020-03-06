@@ -6,10 +6,13 @@ import './rightSideNav.styles.scss';
 const RightSideNav = () => <div className="right-side-nav">
     <ul className="nav-links">
         <li className="nav-item-link">
+            <Link to='/'>Home</Link>
+        </li>
+        <li className="nav-item-link">
             <Link to='/about'>About</Link>
         </li>
         <li className="nav-item-link">
-            <Link to='/contact'>Services</Link>
+            <Link to='/services'>Services</Link>
         </li>
         <li className="nav-item-link">
             <Link to='/employment'>Employment</Link>

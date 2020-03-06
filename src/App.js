@@ -9,12 +9,15 @@ import About from "./pages/about/about.component";
 import Contact from "./pages/contact/contact.component";
 import Employment from "./pages/employment/employment.component";
 import Services from "./pages/services/services.component";
+import Footer from "./components/footer/footer.component";
+import Spacer from "./components/spacer/spacer.component";
 
 class App extends Component {
   render() {
     return (
       <div>
         <NavBar />
+        <Spacer />
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route path="/about" component={About} />
@@ -22,7 +25,7 @@ class App extends Component {
           <Route path="/employment" component={Employment} />
           <Route path="/services" component={Services} />
         </Switch>
-        {/* <Footer /> */}
+        <Footer />
       </div>
     );
   }
