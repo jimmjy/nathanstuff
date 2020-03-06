@@ -2,11 +2,11 @@ import React from 'react';
 import './leftSideNav.styles.scss';
 import { Link } from 'react-router-dom';
 
-import { ReactComponent as Logo } from '../../assets/rabbitCleenup.svg';
+import logo from '../../assets/logo.png';
 
 const LeftSideNav = () => <div className="leftNav">
     <Link to='/'>
-        <Logo className='nav-logo' />
+        <img className='nav-logo' src={logo} alt="Company logo" />
     </Link>
 
 </div>
