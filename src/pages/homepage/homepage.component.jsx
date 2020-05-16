@@ -16,7 +16,7 @@ const HomePage = () =>
             <section className="motto">
                 <div className="motto-container">
                     <h1 className="motto-title">
-                        We clean, you rest!
+                        You rest, we clean!
             </h1>
                     <p className="submotto">
                         See how letting us clean your space can improve your life!
