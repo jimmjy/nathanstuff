@@ -2,7 +2,6 @@ import React, { useState, useContext } from 'react';
 import { withRouter } from 'react-router-dom';
 
 //context
-import FireBaseContext from '../../components/Firebase/context';
 import { FirebaseContext } from '../../components/Firebase';
 
 const INITIAL_STATE = {
@@ -12,9 +11,22 @@ const INITIAL_STATE = {
 };
 
 const Admin = ({ history }) => {
-	console.log(history);
-	const { doSignInWithEmailAndPassword } = useContext(FirebaseContext);
+	const { doSignInWithEmailAndPassword, messages } = useContext(
+		FirebaseContext
+	);
 	const [credentials, setCredentials] = useState(INITIAL_STATE);
+	const [dataMessages, setDataMessages] = useState('');
+
+	//move to admin console
+	const getData = e => {
+		e.preventDefault();
+
+		messages().once('value', snapshot => {
+			setDataMessages({
+				messages: snapshot.val(),
+			});
+		});
+	};
 
 	const onInputChange = e => {
 		setCredentials({ ...credentials, [e.target.name]: e.target.value });
@@ -33,6 +45,8 @@ const Admin = ({ history }) => {
 	};
 
 	const isValid = credentials.password === '' || credentials.username === '';
+
+	//if user gets logged in, display retrieve messages button
 
 	return (
 		<form className='user-login-form' onSubmit={onSubmit}>
