@@ -1,35 +1,46 @@
 .homepage-main-content {
-  padding: 0 70px;
-  display: flex;
+	padding: 0 70px;
+	display: flex;
+	background: #ffefba; /* fallback for old browsers */
+	background: -webkit-linear-gradient(
+		to top,
+		#ffffff,
+		#ffefba
+	); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(
+		to top,
+		#ffffff,
+		#ffefba
+	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .motto,
 .homepage-image-container {
-  width: 50%;
-  margin-bottom: 20px;
+	width: 50%;
+	margin-bottom: 20px;
 }
 
 .motto {
-  background-color: rgb(183, 223, 241);
-  padding: 0 40px;
-  font-family: caladea, serif;
-  color: rgb(71, 70, 70);
+	background-color: rgb(183, 223, 241);
+	padding: 0 40px;
+	font-family: caladea, serif;
+	color: rgb(71, 70, 70);
 
-  .motto-container {
-    margin-top: 200px;
+	.motto-container {
+		margin-top: 200px;
 
-    .motto-title {
-      font-size: 72px;
-    }
+		.motto-title {
+			font-size: 72px;
+		}
 
-    .submotto {
-      font-size: 20px;
-    }
-  }
+		.submotto {
+			font-size: 20px;
+		}
+	}
 }
 
 .homepage-image {
-  display: block;
-  width: 100%;
-  object-fit: contain;
+	display: block;
+	width: 100%;
+	object-fit: contain;
 }

@@ -1,17 +1,23 @@
-import React, { useState, useContext } from 'react';
-import { v4 as uuid } from 'uuid';
+import React, { useState, useContext, useEffect } from "react";
+import { v4 as uuid } from "uuid";
+import { withRouter } from "react-router-dom";
 
 //context
-import { FirebaseContext } from '../../components/Firebase';
+import { FirebaseContext } from "../../components/Firebase";
 
 const INITIAL_STATE = {
-	name: '',
-	email: '',
-	message: '',
+	name: "",
+	email: "",
+	message: "",
 };
 
-const Contact = () => {
+const Contact = ({ history }) => {
 	const [userData, setUserData] = useState(INITIAL_STATE);
+	const [id, setId] = useState("");
+
+	useEffect(() => {
+		setId(uuid());
+	}, []);
 
 	const { messages } = useContext(FirebaseContext);
 
@@ -21,7 +27,10 @@ const Contact = () => {
 	};
 
 	const onFormSubmit = e => {
-		messages().push(userData);
+		messages().push({ ...userData, id });
+		setUserData(INITIAL_STATE);
+		setId("");
+		history.push("/");
 	};
 
 	return (
@@ -49,10 +58,20 @@ const Contact = () => {
 						required
 					/>
 				</div>
+				<div className='contact-number'>
+					<label htmlFor='phone'>Phone:</label>
+					<input
+						type='tel'
+						id='phone'
+						name='phone'
+						value={userData.phone}
+						onChange={onInputChange}
+						required
+					/>
+				</div>
 				<div className='contact-user-message'>
 					<label htmlFor='text-area'>message:</label>
 					<textarea
-						name=''
 						id='text-area'
 						cols='30'
 						rows='10'
@@ -66,4 +85,4 @@ const Contact = () => {
 	);
 };
 
-export default Contact;
+export default withRouter(Contact);

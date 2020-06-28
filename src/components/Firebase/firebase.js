@@ -1,6 +1,6 @@
-import app from 'firebase/app';
-import 'firebase/auth';
-import 'firebase/database';
+import app from "firebase/app";
+import "firebase/auth";
+import "firebase/database";
 
 const config = {
 	apiKey: process.env.REACT_APP_API_KEY,
@@ -28,13 +28,13 @@ class Firebase {
 
 	doSignOut = () => this.auth.signOut();
 
-	doPasswordReset = password => this.auth.currentUser.updatePassword(password);
+	doPasswordReset = email => this.auth.sendPasswordResetEmail(email);
 
 	doPasswordUpdate = password => this.auth.currentUser.updatePassword(password);
 
-	//*** User API ***
-	message = uid => this.db.ref('/${uid}');
-	messages = () => this.db.ref('/messages');
+	//*** message/ API ***
+	message = uid => this.db.ref(`messages/${uid}`);
+	messages = () => this.db.ref("/messages");
 }
 
 export default Firebase;

@@ -1,14 +1,27 @@
-import React from 'react';
+import React, { useContext } from "react";
 
-import './navigation.styles.scss';
+//styles
+import "./navigation.styles.scss";
 
 //components
-import LeftSideNav from '../leftSideNav/leftSideNav.component';
-import RightSideNav from '../rightSideNav/rightSideNav.component';
+import LeftSideNav from "../leftSideNav/leftSideNav.component";
+import RightSideNav from "../rightSideNav/rightSideNav.component";
+import SignOut from "../signOut/signout";
 
-const Navigation = () => <nav className='nav-bar'>
-    <LeftSideNav />
-    <RightSideNav />
-</nav>
+//context
+import { AuthUserContext } from "../sessions";
+
+const Navigation = () => {
+	const { authUser } = useContext(AuthUserContext);
+
+	return (
+		<nav className='nav-bar'>
+			{console.log("auth", authUser)}
+			<LeftSideNav />
+			<RightSideNav />
+			{authUser && <SignOut />}
+		</nav>
+	);
+};
 
 export default Navigation;
