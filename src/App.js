@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+// import { withFirebase } from "./components/Firebase";
 
 //helpers
 import { withAuthentication } from "./components/sessions";
@@ -18,25 +19,31 @@ import Error from "./pages/404/error.component";
 import AdminConsole from "./pages/adminConsole/adminConsole";
 import ForgotPassword from "./pages/forgotPassword/forgotPassword";
 
-const App = () => (
-	<Router>
-		<div>
-			<NavBar />
-			<Spacer />
-			<Switch>
-				<Route exact path='/' component={HomePage} />
-				<Route path='/about' component={About} />
-				<Route path='/contact' component={Contact} />
-				<Route path='/employment' component={Employment} />
-				<Route path='/services' component={Services} />
-				<Route path='/admin' component={Admin} />
-				<Route path='/console' component={AdminConsole} />
-				<Route path='/reset' component={ForgotPassword} />
-				<Route path='/' component={Error} />
-			</Switch>
-			<Footer />
-		</div>
-	</Router>
-);
+const App = ({ firebase: { doSignOut } }) => {
+	useEffect(() => {
+		return () => doSignOut();
+	}, []);
+
+	return (
+		<Router>
+			<div>
+				<NavBar />
+				<Spacer />
+				<Switch>
+					<Route exact path='/' component={HomePage} />
+					<Route path='/about' component={About} />
+					<Route path='/contact' component={Contact} />
+					<Route path='/employment' component={Employment} />
+					<Route path='/services' component={Services} />
+					<Route path='/admin' component={Admin} />
+					<Route path='/console' component={AdminConsole} />
+					<Route path='/reset' component={ForgotPassword} />
+					<Route path='/' component={Error} />
+				</Switch>
+				<Footer />
+			</div>
+		</Router>
+	);
+};
 
 export default withAuthentication(App);

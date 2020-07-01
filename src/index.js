@@ -1,11 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 
-import './index.css';
-import App from './App';
-import Firebase, { FirebaseContext } from './components/Firebase';
-import HasEnteredContext from './components/hasEntered/hasEntered';
+import "./index.css";
+import App from "./App";
+import Firebase, { FirebaseContext } from "./components/Firebase";
+import HasEnteredContext from "./components/hasEntered/hasEntered";
 
 ReactDOM.render(
 	<Router>
@@ -15,5 +15,5 @@ ReactDOM.render(
 			</HasEnteredContext>
 		</FirebaseContext.Provider>
 	</Router>,
-	document.getElementById('root')
+	document.getElementById("root")
 );

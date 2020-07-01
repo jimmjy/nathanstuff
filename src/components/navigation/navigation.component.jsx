@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { withRouter } from "react-router-dom";
 
 //styles
 import "./navigation.styles.scss";
@@ -6,22 +7,35 @@ import "./navigation.styles.scss";
 //components
 import LeftSideNav from "../leftSideNav/leftSideNav.component";
 import RightSideNav from "../rightSideNav/rightSideNav.component";
-import SignOut from "../signOut/signout";
+import AdminButton from "../adminButton/admin-button";
 
 //context
-import { AuthUserContext } from "../sessions";
+import { AuthUserContext, withAuthentication } from "../sessions";
 
-const Navigation = () => {
+const Navigation = ({ firebase: { doSignOut }, history }) => {
 	const { authUser } = useContext(AuthUserContext);
+
+	const onSignOutClick = () => {
+		doSignOut();
+		history.push("/admin");
+	};
+
+	const onConsoleClick = () => {
+		history.push("/console");
+	};
 
 	return (
 		<nav className='nav-bar'>
-			{console.log("auth", authUser)}
 			<LeftSideNav />
 			<RightSideNav />
-			{authUser && <SignOut />}
+			{authUser && (
+				<div className='admin-buttons'>
+					<AdminButton onClick={onSignOutClick} title={"Sign Out"} />
+					<AdminButton onClick={onConsoleClick} title={"console"} />
+				</div>
+			)}
 		</nav>
 	);
 };
 
-export default Navigation;
+export default withRouter(withAuthentication(Navigation));

@@ -19,8 +19,10 @@ const DetailsCard = ({ message, firebase }) => {
 		firebase.message(id).remove();
 	};
 
+	console.log(message);
+
 	return (
-		<li className='comment-card' onClick={() => setIsModalShowing(true)}>
+		<li className='comment-card'>
 			{/* put li event inside a div in li and button separate so I can remove also */}
 			<span>
 				<strong>Name:</strong> {message.name}
@@ -32,9 +34,10 @@ const DetailsCard = ({ message, firebase }) => {
 				<strong>phone:</strong> {message.phone}
 			</span>
 			<span>
-				<strong>Comment:</strong> {message.comment}
+				<strong>Comment:</strong> {message.message}
 			</span>
 			<button onClick={() => removeDataEntry(message.id)}>Remove</button>
+			<button onClick={() => setIsModalShowing(true)}>Quick View</button>
 			{isModalShowing && (
 				<Modal setIsModalShowing={setIsModalShowing}>
 					<div className='modal-body'>{message.name}</div>
