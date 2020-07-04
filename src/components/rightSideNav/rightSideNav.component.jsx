@@ -25,7 +25,18 @@ const RightSideNav = () => {
 		<div className={`right-side-nav ${menuToggle ? "show-nav" : ""}`}>
 			<div className='nav-toggle-container'>
 				<button className='nav-toggle' onClick={toggleMenu}>
-					X
+					<span
+						className={`toggle-icon ${menuToggle ? "toggle-icon-one" : ""}`}>
+						&#8212;
+					</span>
+					<span
+						className={`toggle-icon ${menuToggle ? "toggle-icon-two" : ""}`}>
+						&#8212;
+					</span>
+					<span
+						className={`toggle-icon ${menuToggle ? "toggle-icon-three" : ""}`}>
+						&#8212;
+					</span>
 				</button>
 			</div>
 

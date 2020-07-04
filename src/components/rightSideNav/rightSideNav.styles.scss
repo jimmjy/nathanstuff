@@ -39,14 +39,11 @@
 @media screen and (max-width: 950px) {
 	.right-side-nav {
 		position: absolute;
-		left: -160px;
-		width: 200px;
+		left: -175px;
 		flex-direction: row-reverse;
 		align-items: unset;
 		justify-content: space-between;
 		transition: all 400ms linear;
-		border: 1px solid gray;
-		background-color: white;
 
 		&.show-nav {
 			left: 0;
@@ -56,13 +53,67 @@
 			position: relative;
 			display: block;
 			height: 50px;
+			width: 50px;
 			display: flex;
 			justify-content: center;
 			align-items: center;
+
+			.nav-toggle {
+				display: flex;
+				flex-wrap: wrap;
+				width: 35px;
+				height: 25px;
+				align-items: center;
+				justify-content: center;
+				border: none;
+				background-color: unset;
+
+				&:focus {
+					outline: none;
+				}
+
+				.toggle-icon {
+					line-height: 0.4rem;
+					font-weight: bold;
+					font-size: 1.25rem;
+					position: relative;
+					transition: all 200ms ease-in;
+				}
+
+				.toggle-icon-one {
+					position: absolute;
+					top: 50%;
+					transform: rotate(-45deg);
+				}
+
+				.toggle-icon-two {
+					opacity: 0;
+				}
+
+				.toggle-icon-three {
+					position: absolute;
+					top: 50%;
+					transform: rotate(45deg);
+				}
+			}
 		}
 
 		.nav-links {
 			flex-direction: column;
+			width: 175px;
+			background-color: white;
+
+			.nav-item-link {
+				height: 25px;
+
+				margin: unset;
+
+				a {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+				}
+			}
 		}
 	}
 }
