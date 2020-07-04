@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/nathanstuff/static/css/main.c4d32428.chunk.css",
-    "main.js": "/nathanstuff/static/js/main.77bfdbfd.chunk.js",
-    "main.js.map": "/nathanstuff/static/js/main.77bfdbfd.chunk.js.map",
+    "main.css": "/nathanstuff/static/css/main.f52c351c.chunk.css",
+    "main.js": "/nathanstuff/static/js/main.e55fa9c3.chunk.js",
+    "main.js.map": "/nathanstuff/static/js/main.e55fa9c3.chunk.js.map",
     "runtime-main.js": "/nathanstuff/static/js/runtime-main.90301f5f.js",
     "runtime-main.js.map": "/nathanstuff/static/js/runtime-main.90301f5f.js.map",
     "static/js/2.40a9ad81.chunk.js": "/nathanstuff/static/js/2.40a9ad81.chunk.js",
     "static/js/2.40a9ad81.chunk.js.map": "/nathanstuff/static/js/2.40a9ad81.chunk.js.map",
     "index.html": "/nathanstuff/index.html",
-    "precache-manifest.a8ebb4cc66c020d2f25cbbe22f8b941e.js": "/nathanstuff/precache-manifest.a8ebb4cc66c020d2f25cbbe22f8b941e.js",
+    "precache-manifest.e9f74e36b3069267a64c9fdbf9458d6a.js": "/nathanstuff/precache-manifest.e9f74e36b3069267a64c9fdbf9458d6a.js",
     "service-worker.js": "/nathanstuff/service-worker.js",
-    "static/css/main.c4d32428.chunk.css.map": "/nathanstuff/static/css/main.c4d32428.chunk.css.map",
+    "static/css/main.f52c351c.chunk.css.map": "/nathanstuff/static/css/main.f52c351c.chunk.css.map",
     "static/js/2.40a9ad81.chunk.js.LICENSE.txt": "/nathanstuff/static/js/2.40a9ad81.chunk.js.LICENSE.txt",
     "static/media/apartment-bed-bedroom-chair-462235.jpg": "/nathanstuff/static/media/apartment-bed-bedroom-chair-462235.71b0b934.jpg",
     "static/media/cleaning.jpg": "/nathanstuff/static/media/cleaning.079e7c4f.jpg",
@@ -23,7 +23,7 @@
   "entrypoints": [
     "static/js/runtime-main.90301f5f.js",
     "static/js/2.40a9ad81.chunk.js",
-    "static/css/main.c4d32428.chunk.css",
-    "static/js/main.77bfdbfd.chunk.js"
+    "static/css/main.f52c351c.chunk.css",
+    "static/js/main.e55fa9c3.chunk.js"
   ]
 }
