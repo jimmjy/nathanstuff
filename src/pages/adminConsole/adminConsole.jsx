@@ -11,21 +11,21 @@ import "./adminConsole.scss";
 //context
 import { AuthUserContext } from "../../components/sessions";
 
-const AdminConsole = ({ firebase }) => {
+//need to pass a prop on this for console button
+const AdminConsole = ({ firebase, ...otherProps }) => {
 	const { authUser } = useContext(AuthUserContext);
 	const [messages, setMessages] = useState([]);
 	const [showList, setShowList] = useState(false);
 
+	console.log("other", authUser);
+
 	useEffect(() => {
 		firebase.messages().on("value", snapshot => {
-			// setMessages(snapshot.val());
 			const storedMessages = snapshot.val();
 			const updatedMessages = [];
 			for (let key in storedMessages) {
 				updatedMessages.push({ ...storedMessages[key], id: key });
 			}
-
-			console.log("updated", updatedMessages);
 
 			setMessages(updatedMessages);
 		});
@@ -39,8 +39,6 @@ const AdminConsole = ({ firebase }) => {
 		setShowList(true);
 	};
 
-	console.log("new message list", messages);
-
 	return (
 		<div>
 			{authUser ? (
@@ -52,7 +50,7 @@ const AdminConsole = ({ firebase }) => {
 						<ul>
 							{showList &&
 								messages?.map(message => {
-									return <DetailsCard message={message} />;
+									return <DetailsCard message={message} key={message.id} />;
 								})}
 						</ul>
 					</div>

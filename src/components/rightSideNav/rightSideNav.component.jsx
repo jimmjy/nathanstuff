@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
+//components
+import AdminButton from "../adminButton/admin-button";
+
+//styles
 import "./rightSideNav.styles.scss";
 
-const RightSideNav = () => {
+const RightSideNav = ({ authUser, onSignOutClick, onConsoleClick }) => {
 	const [menuToggle, setMenuToggle] = useState(false);
 
 	const closeNav = e => {
@@ -14,7 +18,13 @@ const RightSideNav = () => {
 	useEffect(() => {
 		menuToggle && window.addEventListener("click", closeNav);
 
-		return () => window.removeEventListener("click", closeNav);
+		menuToggle && window.addEventListener("resize", closeNav);
+
+		return () => {
+			window.removeEventListener("click", closeNav);
+
+			window.removeEventListener("resize", closeNav);
+		};
 	}, [menuToggle]);
 
 	const toggleMenu = () => {
@@ -59,6 +69,17 @@ const RightSideNav = () => {
 				<li className='nav-item-link'>
 					<a href='tel:555-555-1212'>555-555-1212</a>
 				</li>
+				{authUser && (
+					<>
+						<li className='nav-item-link'>
+							{/* <AdminButton onClick={onConsoleClick} title={"Console"} /> */}
+							<Link to='/console'>Console</Link>
+						</li>
+						<li className='nav-item-link'>
+							<AdminButton onClick={onSignOutClick} title={"Sign Out"} />
+						</li>
+					</>
+				)}
 			</ul>
 		</div>
 	);

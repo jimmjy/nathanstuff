@@ -7,7 +7,6 @@ import "./navigation.styles.scss";
 //components
 import LeftSideNav from "../leftSideNav/leftSideNav.component";
 import RightSideNav from "../rightSideNav/rightSideNav.component";
-import AdminButton from "../adminButton/admin-button";
 
 //context
 import { AuthUserContext, withAuthentication } from "../sessions";
@@ -27,13 +26,11 @@ const Navigation = ({ firebase: { doSignOut }, history }) => {
 	return (
 		<nav className='nav-bar'>
 			<LeftSideNav />
-			<RightSideNav />
-			{authUser && (
-				<div className='admin-buttons'>
-					<AdminButton onClick={onSignOutClick} title={"Sign Out"} />
-					<AdminButton onClick={onConsoleClick} title={"console"} />
-				</div>
-			)}
+			<RightSideNav
+				authUser={authUser}
+				onSignOutClick={onSignOutClick}
+				onConsoleClick={onConsoleClick}
+			/>
 		</nav>
 	);
 };

@@ -17,11 +17,19 @@
 
 	.nav-item-link {
 		margin: 0 13px;
+		height: 30px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		font-family: raleway, sans-serif;
+
+		&:hover {
+			border-bottom: 1.5px solid;
+			border-image-source: linear-gradient(45deg, #aaa6a6, #b7dff1);
+			border-image-slice: 1;
+		}
 		a {
 			font-size: 1rem;
-			width: 100%;
-			height: 100%;
 			text-decoration: none;
 			color: rgba(80, 80, 131, 0.938);
 
@@ -32,6 +40,22 @@
 			&:hover {
 				color: rgb(28, 46, 150);
 			}
+		}
+
+		.sign-out-btn {
+			width: 100%;
+			height: 100%;
+		}
+
+		.nav-button {
+			border: none;
+			width: 100%;
+			height: 100%;
+			background: none;
+			height: 100%;
+			font-size: 1rem;
+			text-decoration: none;
+			color: #505083ef;
 		}
 	}
 }
@@ -99,19 +123,31 @@
 		}
 
 		.nav-links {
+			box-sizing: border-box;
 			flex-direction: column;
 			width: 175px;
 			background-color: white;
+			border: 1px solid #808080;
+			border-radius: 3px;
+			padding: 0 10px;
 
 			.nav-item-link {
-				height: 25px;
-
+				height: 35px;
 				margin: unset;
+				border-bottom: 1.5px solid;
+				border-image-source: linear-gradient(45deg, #aaa6a6, #b7dff1);
+				border-image-slice: 1;
+
+				&:last-child {
+					border-bottom: unset;
+				}
 
 				a {
 					display: flex;
 					justify-content: center;
 					align-items: center;
+					width: 100%;
+					height: 100%;
 				}
 			}
 		}

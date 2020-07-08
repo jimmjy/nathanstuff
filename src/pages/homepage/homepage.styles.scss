@@ -14,10 +14,16 @@
 	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+.homepage-landing {
+	display: flex;
+	overflow: hidden;
+	height: calc(100vh - 100px);
+}
+
 .motto,
 .homepage-image-container {
 	width: 50%;
-	margin-bottom: 20px;
+	max-height: 100vh;
 }
 
 .motto {
@@ -27,14 +33,14 @@
 	color: rgb(71, 70, 70);
 
 	.motto-container {
-		margin-top: 200px;
+		// margin-top: 200px;
 
 		.motto-title {
-			font-size: 72px;
+			font-size: 4.5em;
 		}
 
 		.submotto {
-			font-size: 20px;
+			font-size: 1.25em;
 		}
 	}
 }

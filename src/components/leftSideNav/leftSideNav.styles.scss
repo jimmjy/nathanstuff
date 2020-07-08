@@ -32,3 +32,10 @@
 		}
 	}
 }
+
+@media screen and (max-width: 650px) {
+	.leftNav {
+		position: relative;
+		left: 95%;
+	}
+}
