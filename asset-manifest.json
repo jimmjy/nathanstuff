@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/nathanstuff/static/css/main.7ecb6ed4.chunk.css",
-    "main.js": "/nathanstuff/static/js/main.07b4d3b8.chunk.js",
-    "main.js.map": "/nathanstuff/static/js/main.07b4d3b8.chunk.js.map",
+    "main.css": "/nathanstuff/static/css/main.1e252188.chunk.css",
+    "main.js": "/nathanstuff/static/js/main.3b6ecb02.chunk.js",
+    "main.js.map": "/nathanstuff/static/js/main.3b6ecb02.chunk.js.map",
     "runtime-main.js": "/nathanstuff/static/js/runtime-main.90301f5f.js",
     "runtime-main.js.map": "/nathanstuff/static/js/runtime-main.90301f5f.js.map",
-    "static/js/2.4e8a619c.chunk.js": "/nathanstuff/static/js/2.4e8a619c.chunk.js",
-    "static/js/2.4e8a619c.chunk.js.map": "/nathanstuff/static/js/2.4e8a619c.chunk.js.map",
+    "static/js/2.c43dfbc9.chunk.js": "/nathanstuff/static/js/2.c43dfbc9.chunk.js",
+    "static/js/2.c43dfbc9.chunk.js.map": "/nathanstuff/static/js/2.c43dfbc9.chunk.js.map",
     "index.html": "/nathanstuff/index.html",
-    "precache-manifest.223dc6ecccd93c54457136ac944ed7da.js": "/nathanstuff/precache-manifest.223dc6ecccd93c54457136ac944ed7da.js",
+    "precache-manifest.6fb567ebcf6a54ddfbf5da14806c97cb.js": "/nathanstuff/precache-manifest.6fb567ebcf6a54ddfbf5da14806c97cb.js",
     "service-worker.js": "/nathanstuff/service-worker.js",
-    "static/css/main.7ecb6ed4.chunk.css.map": "/nathanstuff/static/css/main.7ecb6ed4.chunk.css.map",
-    "static/js/2.4e8a619c.chunk.js.LICENSE.txt": "/nathanstuff/static/js/2.4e8a619c.chunk.js.LICENSE.txt",
-    "static/media/apartment-bed-bedroom-chair-462235.jpg": "/nathanstuff/static/media/apartment-bed-bedroom-chair-462235.71b0b934.jpg",
+    "static/css/main.1e252188.chunk.css.map": "/nathanstuff/static/css/main.1e252188.chunk.css.map",
+    "static/js/2.c43dfbc9.chunk.js.LICENSE.txt": "/nathanstuff/static/js/2.c43dfbc9.chunk.js.LICENSE.txt",
+    "static/media/homepage.styles.scss": "/nathanstuff/static/media/apartment-bed-bedroom-chair-462235.71b0b934.jpg",
     "static/media/cleaning.jpg": "/nathanstuff/static/media/cleaning.079e7c4f.jpg",
     "static/media/dog-walking.jpg": "/nathanstuff/static/media/dog-walking.bc118482.jpg",
     "static/media/errands.jpg": "/nathanstuff/static/media/errands.808bd343.jpg",
@@ -22,8 +22,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.90301f5f.js",
-    "static/js/2.4e8a619c.chunk.js",
-    "static/css/main.7ecb6ed4.chunk.css",
-    "static/js/main.07b4d3b8.chunk.js"
+    "static/js/2.c43dfbc9.chunk.js",
+    "static/css/main.1e252188.chunk.css",
+    "static/js/main.3b6ecb02.chunk.js"
   ]
 }
