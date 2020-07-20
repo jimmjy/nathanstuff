@@ -1,52 +1,92 @@
 .homepage-main-content {
-	padding: 0 70px;
-	display: flex;
-	background: #ffefba; /* fallback for old browsers */
-	background: -webkit-linear-gradient(
-		to top,
-		#ffffff,
-		#ffefba
-	); /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(
-		to top,
-		#ffffff,
-		#ffefba
-	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  padding: 0 20px;
+  display: flex;
+  background: #ffefba; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to top,
+    #ffffff,
+    #ffefba
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to top,
+    #ffffff,
+    #ffefba
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .homepage-landing {
-	display: flex;
-	overflow: hidden;
-	height: calc(100vh - 100px);
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  height: calc(100vh - 100px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.motto,
-.homepage-image-container {
-	width: 50%;
-	max-height: 100vh;
+.background-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../assets/apartment-bed-bedroom-chair-462235.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.65;
 }
 
-.motto {
-	background-color: rgb(183, 223, 241);
-	padding: 0 40px;
-	font-family: caladea, serif;
-	color: rgb(71, 70, 70);
+.motto-container {
+  position: relative;
+  font-family: caladea, serif;
+  color: rgb(7, 40, 82);
+  padding: 0 15px;
+  width: 69%;
 
-	.motto-container {
-		// margin-top: 200px;
+  .motto-title {
+    font-size: 4.5rem;
+    margin-top: unset;
+  }
 
-		.motto-title {
-			font-size: 4.5em;
-		}
-
-		.submotto {
-			font-size: 1.25em;
-		}
-	}
+  .submotto {
+    font-size: 2.25rem;
+    // width: 70%;
+  }
 }
 
 .homepage-image {
-	display: block;
-	width: 100%;
-	object-fit: contain;
+  display: block;
+  width: 100%;
+  object-fit: contain;
+}
+
+@media screen and (max-width: 950px) {
+  .motto-container {
+    width: 75%;
+
+    .motto-title {
+      //   font-size: 2.5rem;
+      //   margin-top: unset;
+    }
+
+    .submotto {
+      //   font-size: 1rem;
+      // width: 70%;
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .motto-container {
+    width: 80%;
+
+    .motto-title {
+      font-size: 2.5rem;
+      margin-top: unset;
+    }
+
+    .submotto {
+      font-size: 1.25rem;
+      // width: 70%;
+    }
+  }
 }
