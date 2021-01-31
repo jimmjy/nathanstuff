@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
-import { withFirebase } from "../../components/Firebase";
+import React, { useState, useEffect } from 'react';
+import { withFirebase } from '../../components/Firebase';
 
 //components
-import Modal from "../modal/modal";
+import Modal from '../modal/modal';
 
 //styles
-import "./detailsCard.scss";
+import './detailsCard.scss';
 
 const DetailsCard = ({ message, firebase }) => {
 	const [isModalShowing, setIsModalShowing] = useState(false);
@@ -15,7 +15,7 @@ const DetailsCard = ({ message, firebase }) => {
 	}, []);
 
 	//remove from firebase
-	const removeDataEntry = id => {
+	const removeDataEntry = (id) => {
 		firebase.message(id).remove();
 	};
 

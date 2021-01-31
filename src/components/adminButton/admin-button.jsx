@@ -1,9 +1,9 @@
-import React from "react";
-import { withFirebase } from "../Firebase";
-import { withRouter } from "react-router-dom";
+import React from 'react';
+import { withFirebase } from '../Firebase';
+import { withRouter } from 'react-router-dom';
 
 //styles
-import "./admin-button.scss";
+import './admin-button.scss';
 
 //need to change this to a link probably
 

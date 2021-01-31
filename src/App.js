@@ -6,22 +6,16 @@ import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import { withAuthentication } from "./components/sessions";
 
 //components
-import HomePage from "./pages/homepage/homepage.component";
+import {HomePage, About, Contact, Employment, Services, Admin, AdminConsole, ForgotPassword, Testimonials} from "./pages";
 import NavBar from "./components/navigation/navigation.component";
-import About from "./pages/about/about.component";
-import Contact from "./pages/contact/contact.component";
-import Employment from "./pages/employment/employment.component";
-import Services from "./pages/services/services.component";
 import Footer from "./components/footer/footer.component";
 import Spacer from "./components/spacer/spacer.component";
-import Admin from "./pages/admin/admin.component";
-import Error from "./pages/404/error.component";
-import AdminConsole from "./pages/adminConsole/adminConsole";
-import ForgotPassword from "./pages/forgotPassword/forgotPassword";
+
 
 const App = ({ firebase: { doSignOut } }) => {
   useEffect(() => {
     return () => doSignOut();
+    // eslint-disable-next-line
   }, []);
 
   return (
@@ -36,6 +30,7 @@ const App = ({ firebase: { doSignOut } }) => {
           <Route path="/employment" component={Employment} />
           <Route path="/services" component={Services} />
           <Route path="/admin" component={Admin} />
+          <Route path="/testimonials" component={Testimonials} />
           <Route path="/console" component={AdminConsole} />
           <Route path="/reset" component={ForgotPassword} />
           <Route path="/" component={Error} />
