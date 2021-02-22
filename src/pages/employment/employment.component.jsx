@@ -1,16 +1,39 @@
 import React from "react";
 
+import { Container, Row, Col, Button } from "react-bootstrap";
+
+// data
+import { employmentInfo } from "../../data/employment";
+
+// styles
+import "./employment.styles.scss";
+
 const Employment = () => (
-	<div>
-		Employment Page: Do you have a good attitude? Are you friendly? A good
-		listener? Do messes, dirt, and disorganization bother you? Are you able to
-		take directions and execute them with proficiency? Do you feel a sense of
-		achievement and pride after doing a good job? Punctual? Are you honest and
-		trustworthy? Self-motivated? Do you want to work in a vibrant respectful
-		environment where you are rewarded fairly for your efforts? If your answer
-		is yes, then we want to hear from you. Call and speak to our friendly
-		Solutions Specialist. call use: number here
-	</div>
+  <div className='employment-wrapper'>
+    <Container className='about-body shadow employment-width'>
+      <h2 className='employment-title'>{employmentInfo.title}</h2>
+      <Row className='justify-content-center'>
+        <Col lg={8}>
+          <p className='about-content employment-content'>
+            {employmentInfo.questions}
+          </p>
+        </Col>
+        <Col lg={8}>
+          <p className='about-content employment-content'>
+            {employmentInfo.contactUs}
+          </p>
+          <div className='button-container'>
+            <a
+              className='btn btn-outline-primary outline-color'
+              href='tel:555-555-1212'
+            >
+              555-555-1212
+            </a>
+          </div>
+        </Col>
+      </Row>
+    </Container>
+  </div>
 );
 
 export default Employment;

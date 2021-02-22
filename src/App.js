@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
-import { HashRouter as Router, Route, Switch } from "react-router-dom";
-// import { withFirebase } from "./components/Firebase";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
+//styles
+import "./App.scss";
 
 //helpers
 import { withAuthentication } from "./components/sessions";
@@ -29,7 +31,7 @@ const App = ({ firebase: { doSignOut } }) => {
 
   return (
     <Router>
-      <>
+      <div className='page-wrapper'>
         <NavBar />
         <Spacer />
         <Switch>
@@ -45,7 +47,7 @@ const App = ({ firebase: { doSignOut } }) => {
           <Route path='/' component={Error} />
         </Switch>
         <Footer />
-      </>
+      </div>
     </Router>
   );
 };

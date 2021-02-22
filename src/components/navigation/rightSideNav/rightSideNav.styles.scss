@@ -29,16 +29,16 @@
       border-image-slice: 1;
     }
     a {
-      font-size: 1rem;
+      font-size: 1.1rem;
       text-decoration: none;
-      color: rgba(80, 80, 131, 0.938);
+      color: rgb(117, 155, 202);
 
       &:visited {
         color: none;
       }
 
       &:hover {
-        color: rgb(28, 46, 150);
+        color: rgb(9, 100, 212);
       }
     }
 

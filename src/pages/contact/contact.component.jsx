@@ -5,84 +5,107 @@ import { withRouter } from "react-router-dom";
 //context
 import { FirebaseContext } from "../../components/Firebase";
 
+// bootstrap
+import { Form, Col, Row, Button } from "react-bootstrap";
+
+//styles
+import "./contact.styles.scss";
+
 const INITIAL_STATE = {
-	name: "",
-	email: "",
-	message: "",
+  name: "",
+  email: "",
+  phone: "",
+  message: "",
 };
 
 const Contact = ({ history }) => {
-	const [userData, setUserData] = useState(INITIAL_STATE);
-	const [id, setId] = useState("");
+  const [userData, setUserData] = useState(INITIAL_STATE);
+  const [id, setId] = useState("");
 
-	useEffect(() => {
-		setId(uuid());
-	}, []);
+  useEffect(() => {
+    setId(uuid());
+  }, []);
 
-	const { messages } = useContext(FirebaseContext);
+  const { messages } = useContext(FirebaseContext);
 
-	const onInputChange = e => {
-		e.preventDefault();
-		setUserData({ ...userData, [e.target.name]: e.target.value });
-	};
+  const onInputChange = (e) => {
+    e.preventDefault();
+    setUserData({ ...userData, [e.target.name]: e.target.value });
+  };
 
-	const onFormSubmit = e => {
-		messages().push({ ...userData, id });
-		setUserData(INITIAL_STATE);
-		setId("");
-		history.push("/");
-	};
+  const onFormSubmit = (e) => {
+    e.preventDefault();
+    messages().push({ ...userData, id });
+    setUserData(INITIAL_STATE);
+    setId("");
+    history.push("/");
+  };
 
-	return (
-		<div>
-			<form onSubmit={onFormSubmit}>
-				<div className='contact-user'>
-					<label htmlFor='name'>Name:</label>
-					<input
-						id='name'
-						name='name'
-						type='text'
-						required
-						value={userData.name}
-						onChange={onInputChange}
-					/>
-				</div>
-				<div className='contact-email'>
-					<label htmlFor='email'>Email:</label>
-					<input
-						type='email'
-						id='email'
-						name='email'
-						value={userData.email}
-						onChange={onInputChange}
-						required
-					/>
-				</div>
-				<div className='contact-number'>
-					<label htmlFor='phone'>Phone:</label>
-					<input
-						type='tel'
-						id='phone'
-						name='phone'
-						value={userData.phone}
-						onChange={onInputChange}
-						required
-					/>
-				</div>
-				<div className='contact-user-message'>
-					<label htmlFor='text-area'>message:</label>
-					<textarea
-						id='text-area'
-						cols='30'
-						rows='10'
-						value={userData.message}
-						onChange={onInputChange}
-						name='message'></textarea>
-				</div>
-				<button type='submit'>Submit</button>
-			</form>
-		</div>
-	);
+  return (
+    <div className='form-wrapper'>
+      <Form onSubmit={onFormSubmit}>
+        <Form.Group as={Row}>
+          <Form.Label column sm='2'>
+            Name:
+          </Form.Label>
+          <Col sm='10'>
+            <Form.Control
+              name='name'
+              required
+              onChange={onInputChange}
+              value={userData.name}
+              className='form-input'
+            />
+          </Col>
+        </Form.Group>
+        <Form.Group as={Row} controlId='formPlaintextEmail'>
+          <Form.Label column sm='2'>
+            Email:
+          </Form.Label>
+          <Col sm='10'>
+            <Form.Control
+              name='email'
+              required
+              type='email'
+              onChange={onInputChange}
+              value={userData.email}
+              className='form-input'
+            />
+          </Col>
+        </Form.Group>
+        <Form.Group as={Row}>
+          <Form.Label column sm='2'>
+            Phone:
+          </Form.Label>
+          <Col sm='10'>
+            <Form.Control
+              name='phone'
+              type='tel'
+              onChange={onInputChange}
+              value={userData.phone}
+              className='form-input'
+              required
+            />
+          </Col>
+        </Form.Group>
+        <Form.Group controlId='exampleForm.ControlTextarea1'>
+          <Form.Label>Message</Form.Label>
+          <Form.Control
+            as='textarea'
+            rows={6}
+            name='message'
+            type='textarea'
+            onChange={onInputChange}
+            value={userData.message}
+            required
+          />
+        </Form.Group>
+        <Button variant='outline-primary' type='submit'>
+          Submit
+        </Button>
+      </Form>
+    </div>
+  );
 };
 
 export default withRouter(Contact);
